@@ -16,9 +16,16 @@ public class PlanVegetarianMenu
       PickMenu entree = null;
       String guestChoice = new String();
 
-      PickMenu selection = new PickMenu(briefMenu);
-      entree = selection;
-      guestChoice = entree.getGuestChoice();
+      try
+      {
+        PickMenu selection = new PickMenu(briefMenu);
+        entree = selection;
+        guestChoice = entree.getGuestChoice();
+      }
+      catch(Exception error)
+      {
+        guestChoice = "an invalid vegetarian selection.";
+      }
   
       JOptionPane.showMessageDialog(null, "You chose " + guestChoice);
     }
